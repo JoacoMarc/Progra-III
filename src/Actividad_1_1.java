@@ -12,7 +12,7 @@ public class Actividad_1_1 {
             }
         }
         // print resultado
-        System.out.println("El mayor es: " + max); // 1
+        System.out.println("El mayor es el num: " + max); // 1
 
     }
 }
