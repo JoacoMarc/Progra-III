@@ -1,3 +1,5 @@
+package Actividad_1_1;
+
 public class Actividad_1_1 {
     public static void main(String[] args) {
         int[] array = {1, 5, 9, 0, 4, 3, 6, 12}; // 1
