@@ -27,9 +27,3 @@ bin/
 
 ### Mac OS ###
 .DS_Store
-
-# Ignorar archivos de IntelliJ IDEA
-.idea/
-
-src/.idea/
-
