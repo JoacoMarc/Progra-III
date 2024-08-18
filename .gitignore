@@ -23,6 +23,10 @@ bin/
 /.nb-gradle/
 
 ### VS Code ###
+
+.idea/
+src/.idea/
+
 .vscode/
 
 ### Mac OS ###
