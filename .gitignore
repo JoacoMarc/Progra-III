@@ -31,6 +31,5 @@ bin/
 # Ignorar archivos de IntelliJ IDEA
 .idea/
 
-# Ignorar archivos de configuración de IntelliJ IDEA
 src/.idea/
 
