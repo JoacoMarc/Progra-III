@@ -1,3 +1,5 @@
+package Actividad_1_1_b;
+
 import java.util.ArrayList;
 import java.util.Scanner;
 
