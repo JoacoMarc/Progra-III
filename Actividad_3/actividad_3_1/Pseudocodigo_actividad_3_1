@@ -1,0 +1,13 @@
+Función buscarClienteConScoringMaximo(listaClientes)
+    Si listaClientes tiene solo un elemento
+        retornar ese elemento
+    Sino
+        mitad = longitud de listaClientes / 2
+        ladoIzquierdo = buscarClienteConScoringMaximo(listaClientes[0..mitad-1])
+        ladoDerecho = buscarClienteConScoringMaximo(listaClientes[mitad..fin])
+        Si ladoIzquierdo.scoring > ladoDerecho.scoring
+            retornar ladoIzquierdo
+        Sino
+            retornar ladoDerecho
+FinFunción
+
