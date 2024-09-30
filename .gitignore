@@ -3,6 +3,8 @@ out/
 !**/src/main/**/out/
 !**/src/test/**/out/
 
+Actividad_2/actividad_2_3/production
+
 ### Eclipse ###
 .apt_generated
 .classpath

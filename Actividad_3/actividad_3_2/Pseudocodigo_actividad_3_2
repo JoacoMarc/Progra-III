@@ -1,0 +1,21 @@
+1. Si la lista tiene solo un número, devuelve ese número y un valor muy bajo (como -∞) para representar el segundo más grande.
+2. Si la lista tiene dos números, devuelve los dos números ordenados.
+3. Si la lista tiene más de dos números, divídela en dos mitades.
+4. Llama recursivamente a la función para las dos mitades.
+5. Combina los resultados de las dos mitades para obtener los dos números más grandes.
+
+Función encontrarDosMayores(lista):
+    si longitud(lista) == 1:
+        devolver (lista[0], -∞)
+
+    si longitud(lista) == 2:
+        devolver (max(lista[0], lista[1]), min(lista[0], lista[1]))
+
+    mitad = longitud(lista) / 2
+    (mayorIzq, segundoMayorIzq) = encontrarDosMayores(lista[0..mitad-1])
+    (mayorDer, segundoMayorDer) = encontrarDosMayores(lista[mitad..fin])
+
+    mayor = max(mayorIzq, mayorDer)
+    segundoMayor = max(min(mayorIzq, mayorDer), max(segundoMayorIzq, segundoMayorDer))
+
+    devolver (mayor, segundoMayor)
