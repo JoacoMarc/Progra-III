@@ -1,0 +1,25 @@
+Función encontrarDosClientesConMayorScoring(lista):
+    si tamaño(lista) == 1:
+        devolver (lista[0], null)  // Solo hay un cliente
+
+    si tamaño(lista) == 2:
+        si scoring(lista[0]) > scoring(lista[1]):
+            devolver (lista[0], lista[1])
+        sino:
+            devolver (lista[1], lista[0])
+
+    // Dividir la lista en dos mitades
+    mitad = tamaño(lista) / 2
+    (mayorIzq, segundoMayorIzq) = encontrarDosClientesConMayorScoring(lista[0..mitad-1])
+    (mayorDer, segundoMayorDer) = encontrarDosClientesConMayorScoring(lista[mitad..tamaño-1])
+
+    // Combinar los resultados
+    mayor = máximo(mayorIzq, mayorDer)
+    segundoMayor = máximo(restante(mayorIzq, mayorDer, segundoMayorIzq, segundoMayorDer))
+
+    devolver (mayor, segundoMayor)
+
+
+
+máximo(): devuelve el cliente con el mayor scoring.
+restante(): devuelve el segundo cliente más grande entre los no seleccionados como el mayor.
