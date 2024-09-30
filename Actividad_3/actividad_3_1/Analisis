@@ -1,0 +1,33 @@
+Paso 1: Definir el tamaño del problema:
+
+    El tamaño del problema es la cantidad de clientes en la lista, que llamaremos n.
+
+Paso 2: Subdivisión en problemas más pequeños:
+
+    En cada paso de la recursión, el problema se divide en dos subproblemas de tamaño n/2.
+
+Paso 3: Trabajo en cada nivel:
+
+    El trabajo realizado en cada nivel de la recursión implica encontrar el cliente con el scoring máximo en ambas mitades y luego compararlos. Esta comparación de los máximos es una operación constante (O(1)).
+
+Paso 4: Combinación de resultados:
+
+    Después de encontrar los máximos en las sublistas, se realiza una comparación entre los dos valores para seleccionar el máximo global. Esto también toma tiempo constante (O(1)).
+
+Paso 5: Repetición del proceso:
+
+    Este proceso de dividir y combinar se repite a medida que el algoritmo recorre recursivamente los niveles hasta llegar a subproblemas de tamaño 1.
+
+Complejidad del algoritmo:
+
+    Dado que el problema se divide en dos partes iguales en cada paso, y el trabajo en cada nivel de la recursión es O(1) (comparar los dos máximos), la estructura de la recurrencia es similar a la de un árbol binario balanceado.
+
+    El número de niveles en la recursión es logarítmico en función del tamaño del problema, ya que en cada paso el tamaño del problema se reduce a la mitad (log(n) niveles).
+
+Complejidad temporal final:
+
+    El número de niveles de recursión es O(log n) y en cada nivel el trabajo realizado es O(1), por lo que la complejidad total del algoritmo es O(n), lo que es lineal con respecto al número de clientes.
+
+Conclusión:
+
+El algoritmo Divide y Vencerás para encontrar el cliente con el scoring máximo tiene una complejidad temporal de O(n).

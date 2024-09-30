@@ -1,0 +1,9 @@
+El algoritmo sigue una estructura de Divide y Vencerás. En cada paso, el problema se divide en dos mitades de tamaño n/2n/2, y luego los resultados se combinan. El tiempo de combinación es proporcional al número total de elementos involucrados, ya que debemos realizar la operación de combinación entre las dos listas resultantes.
+
+Descripción Conceptual:
+
+   - División: Se divide el array en dos mitades.
+   - Conquista: Se encuentra recursivamente los "n" elementos más grandes en cada mitad.
+   - Fusión: Los resultados de ambas mitades se combinan y se seleccionan los "n" mayores.
+
+La complejidad aproximada del algoritmo es O(n * log(m)), donde nn es el número de elementos en la lista original y mm es el número de elementos que se buscan.

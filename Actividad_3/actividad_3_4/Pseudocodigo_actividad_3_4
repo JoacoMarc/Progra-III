@@ -1,0 +1,16 @@
+Función encontrarNMayores(lista, n):
+    Si tamaño(lista) <= n:
+        devolver lista ordenada en orden descendente (mayores primeros)
+
+    Dividir la lista en dos mitades:
+        mitadIzquierda = lista[0..mitad]
+        mitadDerecha = lista[mitad+1..fin]
+
+    Resolver recursivamente para cada mitad:
+        mayoresIzquierda = encontrarNMayores(mitadIzquierda, n)
+        mayoresDerecha = encontrarNMayores(mitadDerecha, n)
+
+    Combinar resultados:
+        combinar las dos listas de resultados y mantener solo los n más grandes
+
+    Devolver los n elementos más grandes

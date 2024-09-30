@@ -1,0 +1,14 @@
+El algoritmo de Divide y Conquista para encontrar los dos números más grandes en una lista sigue estos pasos:
+
+    División: Se divide el problema en dos sublistas de tamaño n/2.
+    Conquista: Se busca recursivamente los dos mayores de cada mitad.
+    Fusión: Se combinan los resultados comparando los máximos de ambas mitades.
+
+Complejidad:
+
+    Número de niveles: Como se divide la lista a la mitad en cada paso, hay O(log n) niveles.
+    Trabajo en cada nivel: En cada nivel, la combinación de los resultados implica solo O(1) operaciones, porque basta comparar los dos mayores de cada mitad.
+
+Resultado:
+
+La complejidad del algoritmo es O(n), ya que hay O(log n) niveles, pero el trabajo en cada nivel es constante, y la combinación a lo largo de todo el proceso toma O(n) operaciones.

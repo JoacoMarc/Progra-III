@@ -1,0 +1,8 @@
+El algoritmo sigue una estructura de tipo Divide y Vencerás. En cada llamada recursiva, el problema se divide en dos mitades, y luego se combinan los resultados.
+Descripción inductiva:
+
+    - División: Cada vez que se llama a la función, se divide la lista en dos mitades.
+    - Conquista: Luego, el algoritmo selecciona los dos clientes con mayor scoring de las dos mitades.
+    - Fusión: Finalmente, se comparan los resultados de las dos mitades para encontrar los dos mayores.
+
+La complejidad de este algoritmo es O(n), ya que en cada nivel de recursión se divide la lista y luego se combinan los resultados en tiempo constante.
