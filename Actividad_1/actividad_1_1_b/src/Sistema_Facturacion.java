@@ -1,4 +1,6 @@
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Scanner;
 
 public class Sistema_Facturacion {
@@ -92,4 +94,34 @@ public class Sistema_Facturacion {
             System.out.println("ID Cliente: " + datos[0] + ", Nombre: " + datos[1] + ", Suma de Importes: " + datos[2]);
         }
     }
+
+    //Parte con Maps
+    public Map<Integer, Double> sumaImportesConMap() {
+        Map<Integer, Double> mapaImportes = new HashMap<>();
+
+        // Sumar importes por cliente
+        for (Factura factura : lista_Facturas) {
+            int idCliente = factura.id_Cliente;
+            double importe = factura.importe;
+
+            mapaImportes.put(idCliente, mapaImportes.getOrDefault(idCliente, 0.0) + importe);
+        }
+
+        return mapaImportes;
+    }
+
+    public void imprimirFacturaClienteConMap() {
+        Map<Integer, Double> mapaImportes = sumaImportesConMap();
+
+        for (Cliente cliente : lista_clientes) {
+            double sumaImporte = mapaImportes.getOrDefault(cliente.id_Cliente, 0.0);
+            System.out.println("ID Cliente: " + cliente.id_Cliente + ", Nombre: " + cliente.nombre + ", Suma de Importes: " + sumaImporte);
+        }
+    }
+
+    /*
+    Implementación sin Maps: Tiene una complejidad de O(C×F)O(C×F), ya que por cada cliente recorres todas las facturas.
+
+    Implementación con Maps: Reduce la complejidad a O(F+C)O(F+C), ya que recorres las facturas una sola vez para sumar los importes y luego recorres los clientes una vez para imprimir los resultados.
+     */
 }
