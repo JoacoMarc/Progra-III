@@ -1,22 +1,22 @@
 public class Mochila {
 
-    static int[] pesos = {2, 5, 6, 7}; // Pesos de los objetos
-    static int[] valores = {4, 2, 1, 6}; // Valores de los objetos
-    static int capacidadMochila = 10; // Capacidad máxima de la mochila
-    static int[][] dp; // Tabla de programación dinámica
+    static int[] pesos = {2, 5, 6, 7}; 
+    static int[] valores = {4, 2, 1, 6}; 
+    static int capacidadMochila = 10; 
+    static int[][] dp; 
 
     public static void main(String[] args) {
         int numeroObjetos = pesos.length;
         dp = new int[numeroObjetos + 1][capacidadMochila + 1];
 
-        // Inicializar la tabla DP con ceros
+        // Inicializa
         for (int i = 0; i <= numeroObjetos; i++) {
             for (int j = 0; j <= capacidadMochila; j++) {
                 dp[i][j] = 0;
             }
         }
 
-        // Llenar la tabla DP de forma iterativa
+        // Llena la tabla DP 
         for (int i = 1; i <= numeroObjetos; i++) {
             for (int j = 1; j <= capacidadMochila; j++) {
                 if (pesos[i - 1] <= j) {

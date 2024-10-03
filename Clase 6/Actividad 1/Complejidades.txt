@@ -1,0 +1,20 @@
+
+Complejidades:
+
+1. Programación dinámica (Mochila):
+    Complejidad temporal: O(n * W) 
+    (donde n es el número de objetos y W es la capacidad de la mochila, ya que se recorre una tabla de n x W).
+    Como n=3 y W=6, la complejidad sería O(3 * 6) = O(18)
+ 
+2. Fuerza bruta (Mochila):
+    Complejidad temporal: O(2^n) 
+    (debido a que se prueban todas las combinaciones posibles de objetos, lo que genera una complejidad exponencial).
+    Como n=3, la complejidad sería O(2^3) = O(8)
+
+3. Greedy:
+   - Complejidad de tiempo: O(n log n) 
+     (el algoritmo voraz generalmente ordena los objetos en función de la relación valor/peso, lo que tiene una complejidad de O(n log n)).
+     Como n=3, la complejidad sería O(3 log 3) = O(4.754888)
+   - No es el mejor algoritmo para el problema de la Mochila, ya que no siempre garantiza la solución óptima.
+
+

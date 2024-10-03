@@ -4,13 +4,13 @@ import java.util.Comparator;
 public class SeleccionProyectosGreedy {
 
     public static void main(String[] args) {
-        int[] costos = {10, 15, 20, 25}; // Costos de los proyectos
-        int[] beneficios = {100, 200, 150, 300}; // Beneficios esperados de los proyectos
-        int presupuesto = 40; // Presupuesto disponible
+        int[] costos = {10, 15, 20, 25}; 
+        int[] beneficios = {100, 200, 150, 300}; 
+        int presupuesto = 40; 
 
         int numeroProyectos = costos.length;
 
-        // Crear un arreglo de proyectos con costo, beneficio y ratio beneficio/costo
+        // Arreglo de proyectos con costo, beneficio y ratio beneficio/costo
         Proyecto[] proyectos = new Proyecto[numeroProyectos];
         for (int i = 0; i < numeroProyectos; i++) {
             proyectos[i] = new Proyecto(i + 1, costos[i], beneficios[i]);

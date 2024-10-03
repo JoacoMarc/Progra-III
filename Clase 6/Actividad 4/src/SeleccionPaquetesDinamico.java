@@ -1,21 +1,21 @@
 public class SeleccionPaquetesDinamico {
 
     public static void main(String[] args) {
-        int[] costos = {12, 20, 15, 25}; // Costos de los paquetes de inversión
-        int[] ganancias = {150, 200, 100, 300}; // Ganancias esperadas de los paquetes
-        int presupuesto = 35; // Presupuesto disponible
+        int[] costos = {12, 20, 15, 25}; 
+        int[] ganancias = {150, 200, 100, 300}; 
+        int presupuesto = 35; 
 
         int numeroPaquetes = costos.length;
         int[][] dp = new int[numeroPaquetes + 1][presupuesto + 1];
 
-        // Inicializar la tabla dp con ceros
+        // Inicializar 
         for (int i = 0; i <= numeroPaquetes; i++) {
             for (int j = 0; j <= presupuesto; j++) {
                 dp[i][j] = 0;
             }
         }
 
-        // Llenar la tabla dp de forma iterativa
+        // Llena la tabla dp 
         for (int i = 1; i <= numeroPaquetes; i++) {
             for (int j = 1; j <= presupuesto; j++) {
                 if (costos[i - 1] <= j) {

@@ -4,19 +4,19 @@ import java.util.Comparator;
 public class SeleccionPaquetesInversionGreedy {
 
     public static void main(String[] args) {
-        int[] costos = {12, 20, 15, 25}; // Costos de los paquetes de inversión
-        int[] ganancias = {150, 200, 100, 300}; // Ganancias esperadas
-        int presupuesto = 35; // Presupuesto disponible
+        int[] costos = { 12, 20, 15, 25 };
+        int[] ganancias = { 150, 200, 100, 300 };
+        int presupuesto = 35;
 
         int numeroPaquetes = costos.length;
 
-        // Crear un arreglo de paquetes con id, costo y ganancia
+  
         Paquete[] paquetes = new Paquete[numeroPaquetes];
         for (int i = 0; i < numeroPaquetes; i++) {
             paquetes[i] = new Paquete(i + 1, costos[i], ganancias[i]);
         }
 
-        // Ordenar los paquetes por ratio ganancia/costo en orden descendente
+      
         Arrays.sort(paquetes, new Comparator<Paquete>() {
             @Override
             public int compare(Paquete p1, Paquete p2) {
@@ -39,7 +39,7 @@ public class SeleccionPaquetesInversionGreedy {
             }
         }
 
-        // Mostrar los resultados
+        
         System.out.println("Ganancia total obtenida (Greedy): " + gananciaTotal);
         System.out.println("Paquetes seleccionados: " + paquetesSeleccionados.toString());
     }

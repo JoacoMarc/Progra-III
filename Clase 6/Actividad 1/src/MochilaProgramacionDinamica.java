@@ -1,5 +1,3 @@
-package ej1;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -14,14 +12,14 @@ public class MochilaProgramacionDinamica {
         int cantidadObjetos = pesos.length;
         dp = new int[cantidadObjetos + 1][capacidadMochila + 1];
 
-        // Inicializar la tabla dp con -1 para distinguir valores no calculados
+        // Inicializa la tabla dp con -1 para valores no calculados
         for (int i = 0; i <= cantidadObjetos; i++) {
             for (int j = 0; j <= capacidadMochila; j++) {
                 dp[i][j] = -1;
             }
         }
 
-        // Llenar la tabla dp de forma iterativa
+        // Llenar la tabla
         for (int i = 0; i <= cantidadObjetos; i++) {
             for (int j = 0; j <= capacidadMochila; j++) {
                 if (i == 0 || j == 0) {
