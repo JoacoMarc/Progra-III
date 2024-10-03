@@ -1,0 +1,43 @@
+//Descripción del Problema: Un sistema de tesorería tiene a disposición una variedad de comprobantes que incluyen monedas, cheques, bonos 
+//y otros documentos financieros. Cada comprobante tiene un valor específico. El objetivo es realizar una compra de moneda extranjera minimizando 
+//el número de comprobantes utilizados. Resolver mediante pseudocódigo Indicar la complejidad algorítmica.
+
+
+pseudocódigo:
+
+Función realizarCompra(comprobantes, compra):
+    // Ordenar los comprobantes de mayor a menor
+    ordenarDescendente(comprobantes)
+    
+    índice ← 0
+    cantidadComprobantes ← 0
+    
+    Mientras (compra > 0) y (índice < longitud(comprobantes)):
+        si comprobantes[índice] ≤ compra entonces:
+            compra ← compra - comprobantes[índice]
+            cantidadComprobantes ← cantidadComprobantes + 1
+        sino:
+            índice ← índice + 1
+    
+    si compra == 0 entonces:
+        retornar (verdadero, cantidadComprobantes)
+    sino:
+        retornar (falso, cantidadComprobantes)
+
+
+
+complejidad algorítmica:
+
+Ordenamiento:
+
+La operación de ordenamiento (Arrays.sort con Collections.reverseOrder()) tiene una complejidad de O(n log n), donde n es el número de comprobantes.
+Bucle While:
+
+En el peor de los casos, el bucle puede recorrer todos los comprobantes una vez, lo que tiene una complejidad de O(n).
+Dentro del bucle, las operaciones de resta y comparación son O(1).
+Complejidad Total:
+
+La complejidad dominante es la del ordenamiento.
+Por lo tanto, la complejidad total del algoritmo es O(n log n).
+
+

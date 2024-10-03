@@ -1,0 +1,33 @@
+//Dada una lista de monedas con denominaciones convencionales (1, 5, 10, 25, etc.), 
+//implementar una función greedy que determine si es posible entregar un cambio exacto utilizando una lista de monedas disponible. 
+//Realizar pseudocódigo Indicar la complejidad algorítmica.
+
+pseudocódigo:
+
+Función darCambio(denominaciones, cambio):
+    // Ordenar las denominaciones de mayor a menor
+    ordenarDenominacionesDescendente(denominaciones)
+    
+    índice ← 0
+    
+    Mientras (cambio > 0) y (índice < longitud(denominaciones)):
+        si denominaciones[índice] ≤ cambio entonces:
+            cambio ← cambio - denominaciones[índice]
+        sino:
+            índice ← índice + 1
+    
+    retornar (cambio == 0)
+
+
+complejidad algorítmica:
+
+Ordenamiento:
+
+La operación de ordenamiento (Collections.sort) tiene una complejidad de O(n log n), donde n es el número de denominaciones.
+Bucle While:
+
+En el peor de los casos, el bucle puede recorrer todas las denominaciones y, para cada denominación, realizar múltiples restas dependiendo del valor de cambio.
+Sin embargo, dado que las denominaciones son convencionales y suelen tener una cantidad limitada, este paso se considera generalmente O(n) en la práctica.
+Complejidad Total:
+
+La complejidad dominante es la del ordenamiento, por lo que la complejidad total del algoritmo es O(n log n).
