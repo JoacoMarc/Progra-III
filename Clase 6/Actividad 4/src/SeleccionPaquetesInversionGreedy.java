@@ -15,7 +15,6 @@ public class SeleccionPaquetesInversionGreedy {
         for (int i = 0; i < numeroPaquetes; i++) {
             paquetes[i] = new Paquete(i + 1, costos[i], ganancias[i]);
         }
-
       
         Arrays.sort(paquetes, new Comparator<Paquete>() {
             @Override
