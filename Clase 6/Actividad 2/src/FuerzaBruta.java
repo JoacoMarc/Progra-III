@@ -35,3 +35,4 @@ public class FuerzaBruta {
         System.out.println("Objetos seleccionados: " + objetosSeleccionados);
     }
 }
+
