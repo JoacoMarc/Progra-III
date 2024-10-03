@@ -19,7 +19,7 @@ public class MochilaProgramacionDinamica {
             }
         }
 
-        // Llenar la tabla
+        // Llenamos la tabla
         for (int i = 0; i <= cantidadObjetos; i++) {
             for (int j = 0; j <= capacidadMochila; j++) {
                 if (i == 0 || j == 0) {
@@ -56,7 +56,7 @@ public class MochilaProgramacionDinamica {
             seleccionInvertida.add(objetosSeleccionados.get(i));
         }
 
-        System.out.println("Valor máximo obtenido (Programación Dinámica Iterativa con Math.max): " + dp[cantidadObjetos][capacidadMochila]);
+        System.out.println("Valor máximo obtenido (Programación Dinámica): " + dp[cantidadObjetos][capacidadMochila]);
         System.out.print("Objetos seleccionados: ");
         for (int obj : seleccionInvertida) {
             System.out.print((obj + 1) + " ");
