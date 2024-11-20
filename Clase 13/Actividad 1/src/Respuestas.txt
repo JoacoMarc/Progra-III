@@ -1,0 +1,56 @@
+1. Ejemplos de acciones posibles del atacante
+
+Algunas acciones maliciosas comunes que un atacante podría realizar sobre la plataforma son:
+
+   -Inyección SQL (SQL Injection): Inserción de comandos SQL maliciosos para manipular la base de datos.
+   -Ataque de fuerza bruta: Intentos repetidos de acceso mediante contraseñas.
+   -Ataques DDoS (Denegación de servicio): Sobrecarga del servidor con un alto volumen de solicitudes.
+   -Phishing: Suplantación de identidad para engañar a usuarios y obtener credenciales.
+   -Carga de archivos maliciosos: Subir archivos con malware o scripts maliciosos.
+
+
+
+2. Funciones del sistema de detección
+
+El sistema de detección debe tener las siguientes funciones:
+
+   -Monitoreo en tiempo real: Supervisar el tráfico y las solicitudes en la plataforma.
+   -Análisis de patrones: Identificar patrones sospechosos basados en reglas o modelos de machine learning.
+   -Alerta y respuesta: Enviar alertas y bloquear acciones sospechosas automáticamente.
+   -Registro de eventos: Guardar logs de posibles ataques para su análisis posterior.
+   -Integración de herramientas: Uso de firewalls, análisis de logs, y sistemas de detección de intrusos (IDS).
+
+Técnicas y herramientas:
+
+   -Reglas basadas en patrones: Por ejemplo, bloquear cadenas como DROP TABLE para prevenir inyecciones SQL.
+   -Análisis heurístico: Detectar comportamientos anómalos como múltiples intentos de inicio de sesión.
+   -Sistemas de detección de intrusos (IDS): Herramientas como Snort o Suricata.
+   -Firewall de aplicaciones web (WAF): Ejemplo: AWS WAF o Cloudflare para prevenir ataques DDoS.
+   -Inteligencia artificial: Uso de modelos de machine learning para identificar nuevas amenazas.
+
+
+
+3. Explicación de la poda alfa-beta
+
+La poda alfa-beta es una técnica de optimización en algoritmos de búsqueda en árboles de decisiones. En el contexto del sistema de detección de ataques:
+
+    Aplicación:
+        Evalúa los ataques detectados basándose en su severidad (criticidad) y elimina aquellos de baja prioridad que no necesitan atención inmediata.
+        Reduce el número de amenazas a analizar en profundidad.
+    Ejemplo:
+        Si se detectan múltiples ataques simultáneamente (e.g., un ataque de fuerza bruta con severidad 3 y un DDoS con severidad 5), la poda alfa-beta permite priorizar el DDoS por ser más crítico, ignorando los ataques de menor severidad.
+
+
+4. Árbol de decisión simplificado
+
+Un árbol de decisión puede usarse para determinar la respuesta adecuada según el tipo y la severidad del ataque detectado.
+
+Ejemplo:
+
+    Pregunta inicial: ¿El ataque es crítico?
+        Sí: ¿Es un DDoS?
+            Sí: Activar mitigación de DDoS.
+            No: ¿Es un SQL Injection?
+                Sí: Bloquear solicitud y alertar al administrador.
+                No: Registrar y monitorear.
+        No: Monitorear actividad y registrar en logs.
