@@ -7,7 +7,7 @@ public class DosReinasBacktracking {
     public static void main(String[] args) {
         char[][] tablero = new char[TAMAÑO][TAMAÑO];
 
-        // Inicializar el tablero con puntos (vacío)
+
         for (int i = 0; i < TAMAÑO; i++) {
             for (int j = 0; j < TAMAÑO; j++) {
                 tablero[i][j] = '.';
@@ -16,8 +16,8 @@ public class DosReinasBacktracking {
 
         // Arreglos para rastrear columnas y diagonales ocupadas
         boolean[] columnas = new boolean[TAMAÑO];
-        boolean[] diagonalesPrincipales = new boolean[2 * TAMAÑO - 1]; // Diagonales principales
-        boolean[] diagonalesSecundarias = new boolean[2 * TAMAÑO - 1]; // Diagonales secundarias
+        boolean[] diagonalesPrincipales = new boolean[2 * TAMAÑO - 1];
+        boolean[] diagonalesSecundarias = new boolean[2 * TAMAÑO - 1];
 
         // Iniciar el backtracking
         resolver(tablero, 0, 0, columnas, diagonalesPrincipales, diagonalesSecundarias);
@@ -25,16 +25,7 @@ public class DosReinasBacktracking {
         System.out.println("Total de configuraciones válidas: " + conteoSoluciones);
     }
 
-    /**
-     * Método recursivo para colocar las reinas utilizando backtracking.
-     *
-     * @param tablero             El tablero de ajedrez.
-     * @param filaActual          La fila actual.
-     * @param reinasColocadas     Número de reinas colocadas hasta el momento.
-     * @param columnasOcupadas    Columnas ocupadas.
-     * @param diagPrincipales     Diagonales principales ocupadas.
-     * @param diagSecundarias     Diagonales secundarias ocupadas.
-     */
+
     private static void resolver(char[][] tablero, int filaActual, int reinasColocadas, boolean[] columnasOcupadas,
                                  boolean[] diagPrincipales, boolean[] diagSecundarias) {
         // Caso base: si se han colocado todas las reinas
@@ -57,7 +48,7 @@ public class DosReinasBacktracking {
                     // Llamada recursiva para colocar la siguiente reina
                     resolver(tablero, fila + 1, reinasColocadas + 1, columnasOcupadas, diagPrincipales, diagSecundarias);
 
-                    // Backtrack: quitar la reina y desmarcar las posiciones
+                    // Backtrack: sacar la reina y desmarcar las posiciones
                     tablero[fila][columna] = '.';
                     columnasOcupadas[columna] = false;
                     diagPrincipales[fila + columna] = false;
@@ -67,16 +58,7 @@ public class DosReinasBacktracking {
         }
     }
 
-    /**
-     * Verifica si es seguro colocar una reina en la posición (fila, columna).
-     *
-     * @param fila               La fila.
-     * @param columna            La columna.
-     * @param columnasOcupadas   Columnas ocupadas.
-     * @param diagPrincipales    Diagonales principales ocupadas.
-     * @param diagSecundarias    Diagonales secundarias ocupadas.
-     * @return True si es seguro, de lo contrario, false.
-     */
+
     private static boolean esSeguro(int fila, int columna, boolean[] columnasOcupadas,
                                     boolean[] diagPrincipales, boolean[] diagSecundarias) {
         return !columnasOcupadas[columna] &&
@@ -84,11 +66,7 @@ public class DosReinasBacktracking {
                 !diagSecundarias[fila - columna + TAMAÑO - 1];
     }
 
-    /**
-     * Imprime el tablero en la consola.
-     *
-     * @param tablero El tablero de ajedrez.
-     */
+
     private static void imprimirTablero(char[][] tablero) {
         System.out.println("Configuración #" + (conteoSoluciones + 1));
         for (int i = 0; i < TAMAÑO; i++) {
