@@ -25,16 +25,7 @@ public class DiseñoInterioresBacktracking {
         System.out.println("Total de configuraciones válidas: " + conteoSoluciones);
     }
 
-    /**
-     * Método recursivo para colocar escritorios y sillas utilizando backtracking.
-     *
-     * @param tablero          El tablero de 4x4.
-     * @param fila             La fila actual en el tablero.
-     * @param escritoriosCol   Número de escritorios colocados hasta el momento.
-     * @param sillasCol        Número de sillas colocadas hasta el momento.
-     * @param filasOcupadas    Arreglo que rastrea las filas ocupadas.
-     * @param columnasOcupadas Arreglo que rastrea las columnas ocupadas.
-     */
+
     private static void resolver(char[][] tablero, int fila, int escritoriosCol, int sillasCol,
                                  boolean[] filasOcupadas, boolean[] columnasOcupadas) {
         // Caso base: si se han colocado todos los escritorios y sillas
@@ -86,11 +77,7 @@ public class DiseñoInterioresBacktracking {
         }
     }
 
-    /**
-     * Imprime el tablero en la consola.
-     *
-     * @param tablero El tablero de 4x4.
-     */
+
     private static void imprimirTablero(char[][] tablero) {
         System.out.println("Configuración #" + (conteoSoluciones + 1));
         for (int i = 0; i < TAMANO; i++) {
