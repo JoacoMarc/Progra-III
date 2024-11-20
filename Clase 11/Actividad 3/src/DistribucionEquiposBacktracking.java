@@ -25,15 +25,7 @@ public class DistribucionEquiposBacktracking {
         System.out.println("Total de configuraciones válidas: " + conteoSoluciones);
     }
 
-    /**
-     * Método recursivo para colocar las computadoras utilizando backtracking.
-     *
-     * @param tablero                    El tablero de 4x4.
-     * @param computadoraActual          Número de computadoras colocadas hasta el momento.
-     * @param fila                       Fila actual para intentar colocar una computadora.
-     * @param filasOcupadas              Arreglo que rastrea las filas ocupadas por computadoras.
-     * @param columnasOcupadas           Arreglo que rastrea las columnas ocupadas por computadoras.
-     */
+
     private static void colocarComputadoras(char[][] tablero, int computadoraActual, int fila,
                                             boolean[] filasOcupadas, boolean[] columnasOcupadas) {
         // Caso base: si se han colocado todas las computadoras
@@ -65,13 +57,7 @@ public class DistribucionEquiposBacktracking {
         }
     }
 
-    /**
-     * Método recursivo para colocar las impresoras utilizando backtracking.
-     *
-     * @param tablero                   El tablero de 4x4 con computadoras ya colocadas.
-     * @param impresoraActual           Número de impresoras colocadas hasta el momento.
-     * @param fila                      Fila actual para intentar colocar una impresora.
-     */
+
     private static void colocarImpresoras(char[][] tablero, int impresoraActual, int fila,
                                           boolean[] filasOcupadas, boolean[] columnasOcupadas) {
         // Caso base: si se han colocado todas las impresoras
@@ -104,11 +90,7 @@ public class DistribucionEquiposBacktracking {
         }
     }
 
-    /**
-     * Imprime el tablero en la consola.
-     *
-     * @param tablero El tablero de 4x4 con computadoras e impresoras colocadas.
-     */
+
     private static void imprimirTablero(char[][] tablero) {
         System.out.println("Configuración #" + (conteoSoluciones + 1));
         for (int i = 0; i < TAMANO; i++) {
