@@ -1,0 +1,47 @@
+1. ¿Cómo funciona el backtracking en este problema?
+
+- El algoritmo recorre fila por fila, intentando colocar una reina en cada columna de la fila actual.
+- Verifica si la posición es segura utilizando el método isSafe.
+- Si encuentra una posición válida, coloca la reina y pasa a la siguiente fila.
+- Si no puede colocar la reina en ninguna posición de la fila actual, retrocede (backtracking) a la fila anterior y prueba otra posición.
+
+
+2. ¿Qué pasa cuando el algoritmo encuentra una solución? ¿Qué ocurre cuando no puede colocar más reinas?
+
+    Cuando encuentra una solución:
+
+        Todas las reinas están colocadas correctamente en el tablero (una por fila, sin conflictos).
+        El algoritmo imprime el tablero y termina.
+
+    Cuando no puede colocar más reinas:
+
+        Retrocede, descolocando la última reina, y busca otra posición válida.
+        Si no encuentra ninguna solución en todo el tablero, imprime que no hay solución.
+
+
+3. ¿Qué sucede en el código cuando el algoritmo "retrocede"?
+
+Retrocede eliminando la última reina colocada (pone board[row][col] = 0).
+Continúa probando otras posiciones en la misma fila o en filas anteriores.
+
+4. ¿Qué modificaciones harías para aumentar N a 8? ¿Cómo crees que cambiaría el tiempo de ejecución?
+
+Modificaciones:
+
+    Cambiar la constante N a 8.
+
+private static final int N = 8;
+
+Impacto en el tiempo de ejecución:
+
+    El tiempo de ejecución crecerá exponencialmente debido al número de combinaciones posibles para colocar las reinas. Para un tablero de N=8N=8, el número de combinaciones que se exploran es O(N!)O(N!), es decir, 8!=403208!=40320 posibles configuraciones.
+
+
+5. ¿Por qué el método isSafe es crucial en este algoritmo?
+
+isSafe asegura que cada reina se coloque en una posición válida:
+
+    Verifica la columna.
+    Verifica las diagonales superior izquierda y superior derecha.
+
+Sin este método, el algoritmo colocaría reinas en posiciones que violan las reglas del problema, resultando en tableros inválidos.
