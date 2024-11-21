@@ -16,7 +16,11 @@ Dado que la cantidad de combinaciones crece rapidísimo con el número de ciudad
 
 5. Algoritmos genéticos: Se inspiran en cómo evoluciona la vida. Se empieza con varias rutas, combinando y modificando algunas para mejorar las soluciones poco a poco. Es como si las mejores rutas “tuvieran hijos” que heredan sus buenas características.
 
-Estos métodos (hay más, pero elegimos esos 5 como ejemplos) no siempre garantizan la mejor ruta posible, pero son ideales para conseguir soluciones bastante buenas cuando hay muchas ciudades. En lugar de buscar la perfección, se enfocan en encontrar algo funcional en un tiempo razonable y así poder solucionar el problema.
+6. Búsqueda Tabú: Utiliza una memoria para evitar volver a soluciones ya exploradas recientemente, permitiendo una exploración más efectiva del espacio de soluciones.
+
+7. Optimización por Colonias de Hormigas (ACS): Simula el comportamiento de las hormigas depositando feromonas para guiar la búsqueda hacia rutas más cortas.
+
+Estos métodos (hay más, pero elegimos esos 7 como ejemplos) no siempre garantizan la mejor ruta posible, pero son ideales para conseguir soluciones bastante buenas cuando hay muchas ciudades. En lugar de buscar la perfección, se enfocan en encontrar algo funcional en un tiempo razonable y así poder solucionar el problema.
 
 
 Comparación complejidad de Tiempo O(), para el problema del Viajante en 15 ciudades:
@@ -28,7 +32,9 @@ Comparación complejidad de Tiempo O(), para el problema del Viajante en 15 ciud
         Inserción:                O(n²) = 15² = 225 operaciones
         2-opt:                    O(n³) = 15³ = 3,375 operaciones
         Recocido Simulado:        O(n³) = 15³ = 3,375 operaciones
-        Algoritmos Genéticos:     O(g * p * n²) = 1,000 * 100 * 15² = 22,500,000 operaciones
+        Algoritmos Genéticos:     O(g * p * n²) = 1,000 * 100 * 15² = 22,500,000 operaciones  (g=1,000 generaciones; p=100 población)
+        Búsqueda Tabú:            O(n³) = 15³ = 3,375 operaciones
+        Optimización por Colonias de Hormigas: O(m * n²) = 100 * 15² = 22,500 operaciones (m=100 hormigas)
 
-
-
+Métodos heurísticos como Vecino Más Cercano e Inserción son mucho más rápidos pero no garantizan la mejor solución.
+Algoritmos más avanzados como Búsqueda Tabú y Optimización por Colonias de Hormigas ofrecen un mejor equilibrio entre calidad y tiempo.
