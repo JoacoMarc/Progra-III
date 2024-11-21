@@ -1,8 +1,5 @@
 El Problema del Viajante trata sobre encontrar la ruta más corta para visitar un grupo de ciudades, pasando por cada una solo una vez y regresando al punto de inicio. Es un clásico método de optimización.
 
-¿Cuántas combinaciones hay para 15 ciudades?
-Imaginemos que el viajante arranca en una ciudad fija y tiene que permutar las otras 14. El número de combinaciones posibles se calcula como el factorial de 14 (14!), que da un número enorme: 87.178.291.200 rutas posibles. El problema es que, al ser tan grande el número, es prácticamente imposible revisarlas todas manualmente. Y con más ciudades, peor todavía.
-
 ¿Cómo se resuelve este problema?
 Dado que la cantidad de combinaciones crece rapidísimo con el número de ciudades, no se puede analizar cada posibilidad manualmente y una por una. Por eso, existen métodos más prácticos que nos dan buenas soluciones en menos tiempo. Algunos de los más comunes son por ejemplo:
 
