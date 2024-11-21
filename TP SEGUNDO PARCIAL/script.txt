@@ -1,0 +1,21 @@
+https://neo4j.com/docs/getting-started/languages-guides/java/spring-data-neo4j/
+
+CREATE (p1:Person {name: "Keanu Reeves", born: 1964}),
+       (p2:Person {name: "Carrie-Anne Moss", born: 1967})
+
+// Crear la película
+CREATE (movie:Movie {title: "The Matrix", tagline: "Welcome to the Real World"})
+
+// Crear las personas si no existen
+MERGE (keanu:Person {name: "Keanu Reeves", born: 1964})
+MERGE (carrie:Person {name: "Carrie-Anne Moss", born: 1967})
+MERGE (lana:Person {name: "Lana Wachowski", born: 1965})
+MERGE (lilly:Person {name: "Lilly Wachowski", born: 1967})
+
+// Relacionar los actores con la película
+CREATE (keanu)-[:ACTED_IN]->(movie),
+       (carrie)-[:ACTED_IN]->(movie)
+
+// Relacionar los directores con la película
+CREATE (lana)-[:DIRECTED]->(movie),
+       (lilly)-[:DIRECTED]->(movie)
