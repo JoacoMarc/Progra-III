@@ -1,0 +1,19 @@
+El Problema del Viajante trata sobre encontrar la ruta más corta para visitar un grupo de ciudades, pasando por cada una solo una vez y regresando al punto de inicio. Es un clásico método de optimización.
+
+¿Cuántas combinaciones hay para 15 ciudades?
+Imaginemos que el viajante arranca en una ciudad fija y tiene que permutar las otras 14. El número de combinaciones posibles se calcula como el factorial de 14 (14!), que da un número enorme: 87.178.291.200 rutas posibles. El problema es que, al ser tan grande el número, es prácticamente imposible revisarlas todas manualmente. Y con más ciudades, peor todavía.
+
+¿Cómo se resuelve este problema?
+Dado que la cantidad de combinaciones crece rapidísimo con el número de ciudades, no se puede analizar cada posibilidad manualmente y una por una. Por eso, existen métodos más prácticos que nos dan buenas soluciones en menos tiempo. Algunos de los más comunes son por ejemplo:
+
+1. Vecino más cercano: Simple y rápido. Vas eligiendo siempre la ciudad más cercana que no hayas visitado todavía. Aunque no siempre da la ruta perfecta, funciona como punto de partida.
+
+2. Inserción: Se empieza con una mini ruta y vas añadiendo ciudades de manera que la distancia total aumente lo menos posible. 
+
+3. 2-opt: Si ya existe una ruta, este método busca mejorarla intercambiando dos tramos para hacerla más corta. Repite el proceso hasta que no se pueda mejorar más.
+
+4. Recocido simulado: Este método permite, de vez en cuando, probar rutas peores para evitar quedar atrapado en soluciones "mediocres", soluciones que pueden ser mejoradas. Con suerte, encuentra algo mucho mejor explorando más opciones.
+
+5. Algoritmos genéticos: Se inspiran en cómo evoluciona la vida. Se empieza con varias rutas, combinando y modificando algunas para mejorar las soluciones poco a poco. Es como si las mejores rutas “tuvieran hijos” que heredan sus buenas características.
+
+Estos métodos (hay más, pero elegimos esos 5 como ejemplos) no siempre garantizan la mejor ruta posible, pero son ideales para conseguir soluciones bastante buenas cuando hay muchas ciudades. En lugar de buscar la perfección, se enfocan en encontrar algo funcional en un tiempo razonable y así poder solucionar el problema.
